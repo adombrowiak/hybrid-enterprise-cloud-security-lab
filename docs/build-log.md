@@ -102,14 +102,133 @@ Windows 11 account requirements were bypassed to create a local administrator ac
 
 ---
 
-## Next Session
+# Session 2 - Active Directory Foundation
+
+**Date:** June 25, 2026
+
+## Objectives
 
 - Configure static IP addressing
 - Deploy Active Directory Domain Services
 - Configure DNS
 - Promote DC01 to a Domain Controller
 - Join WIN11-01 to the domain
-- Document the initial enterprise architecture
+- Validate Active Directory functionality
+
+## Completed
+
+### Networking
+
+Configured static IP addressing for all systems.
+
+| System | IP Address | Status |
+|----------|----------------|----------|
+| DC01 | 192.168.100.10 | Complete |
+| WIN11-01 | 192.168.100.20 | Complete |
+| UBUNTU01 | 192.168.100.30 | Complete |
+
+Verified full network connectivity between all virtual machines.
+
+### Ubuntu Server
+
+- Configured Netplan with static IP addressing
+- Configured DNS to use DC01
+- Verified SSH connectivity
+- Verified communication with both Windows hosts
+
+### Windows Networking
+
+- Configured static IP addressing
+- Identified Windows Defender Firewall as the source of blocked ICMP traffic
+- Enabled required firewall rules
+- Verified bidirectional connectivity between all systems
+
+### Active Directory
+
+Installed server roles:
+
+- Active Directory Domain Services
+- DNS Server
+
+Created the initial Active Directory forest:
+
+- Domain: `corp.local`
+
+Promoted DC01 to the first Domain Controller.
+
+### Domain Validation
+
+Validated the Active Directory deployment using:
+
+- Get-ADDomain
+- Get-ADForest
+- dcdiag
+- Resolve-DnsName
+- nltest
+
+Verified:
+
+- Domain Controller health
+- DNS resolution
+- Kerberos services
+- LDAP services
+- Global Catalog
+- Secure domain communication
+
+### Windows 11 Domain Join
+
+Successfully joined WIN11-01 to:
+
+`corp.local`
+
+Verified:
+
+- Domain authentication
+- Domain Controller discovery
+- Domain membership
+- Secure channel establishment
+
+---
+
+## Challenges
+
+### Windows Defender Firewall
+
+ICMP traffic between Windows systems was initially blocked by Windows Defender Firewall despite correct network configuration.
+
+Connectivity was restored after enabling the appropriate inbound firewall rules.
+
+### Ubuntu Netplan Configuration
+
+Ubuntu Server required manual Netplan configuration for static networking.
+
+Proper YAML indentation was required for successful deployment.
+
+### Active Directory Promotion
+
+PowerShell produced inconsistent behavior during the initial promotion attempt.
+
+The Domain Controller was successfully promoted and validated using Active Directory diagnostic tools.
+
+---
+
+## Lessons Learned
+
+- Active Directory depends heavily on proper DNS configuration.
+- Windows Defender Firewall should be one of the first components verified during network troubleshooting.
+- Verifying each deployment stage with administrative tools simplifies troubleshooting and confirms successful configuration.
+- Building infrastructure incrementally provides a stronger understanding of enterprise environments than using preconfigured lab images.
+
+---
+
+## Next Session
+
+- Create Organizational Units (OUs)
+- Create domain users
+- Create security groups
+- Configure baseline Group Policy Objects (GPOs)
+- Join Ubuntu Server to Active Directory
+- Begin enterprise security hardening
 
 ---
 
