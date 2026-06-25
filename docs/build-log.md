@@ -123,9 +123,9 @@ Configured static IP addressing for all systems.
 
 | System | IP Address | Status |
 |----------|----------------|----------|
-| DC01 | 192.168.100.10 | Complete |
-| WIN11-01 | 192.168.100.20 | Complete |
-| UBUNTU01 | 192.168.100.30 | Complete |
+| DC01 | 192.168.1.210 | Complete |
+| WIN11-01 | 192.168.1.220 | Complete |
+| UBUNTU01 | 192.168.1.230 | Complete |
 
 Verified full network connectivity between all virtual machines.
 
@@ -142,6 +142,9 @@ Verified full network connectivity between all virtual machines.
 - Identified Windows Defender Firewall as the source of blocked ICMP traffic
 - Enabled required firewall rules
 - Verified bidirectional connectivity between all systems
+- Configured default gateway for Internet connectivity
+- Configured DNS forwarders for external name resolution
+- Verified Internet connectivity through the domain controller
 
 ### Active Directory
 
@@ -155,6 +158,12 @@ Created the initial Active Directory forest:
 - Domain: `corp.local`
 
 Promoted DC01 to the first Domain Controller.
+Configured DNS forwarders for external name resolution.
+
+Forwarders:
+
+- Google Public DNS (8.8.8.8)
+- Cloudflare DNS (1.1.1.1)
 
 ### Domain Validation
 
@@ -204,11 +213,11 @@ Ubuntu Server required manual Netplan configuration for static networking.
 
 Proper YAML indentation was required for successful deployment.
 
-### Active Directory Promotion
+### Network Configuration
 
-PowerShell produced inconsistent behavior during the initial promotion attempt.
+The initial lab network was configured on an isolated subnet (192.168.100.0/24), which prevented Internet connectivity while using an External Hyper-V virtual switch.
 
-The Domain Controller was successfully promoted and validated using Active Directory diagnostic tools.
+The environment was migrated to the physical network subnet (192.168.1.0/24), default gateways were configured, and DNS forwarders were added to restore Internet connectivity while maintaining Active Directory functionality.
 
 ---
 
@@ -218,7 +227,11 @@ The Domain Controller was successfully promoted and validated using Active Direc
 - Windows Defender Firewall should be one of the first components verified during network troubleshooting.
 - Verifying each deployment stage with administrative tools simplifies troubleshooting and confirms successful configuration.
 - Building infrastructure incrementally provides a stronger understanding of enterprise environments than using preconfigured lab images.
-
+- Active Directory environments require proper DNS forwarding to resolve external resources.
+- Static IP configurations must include a default gateway to provide Internet connectivity.
+- Hyper-V External virtual switches bridge virtual machines directly onto the physical network, making subnet planning an important design consideration.
+- Domain Controllers require DNS forwarders to resolve external resources while continuing to provide authoritative DNS services for the Active Directory domain.
+- Static IP configurations should include a default gateway when Internet connectivity is required.
 ---
 
 ## Next Session
