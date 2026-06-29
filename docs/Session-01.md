@@ -191,3 +191,53 @@ Session 2 will focus on establishing the enterprise identity infrastructure by:
 - Promoting DC01 to a Domain Controller
 - Joining Windows 11 to the Active Directory domain
 - Validating enterprise authentication services
+
+---
+
+# Screenshots
+
+## Hyper-V Environment
+
+The initial Hyper-V environment containing the three virtual machines used throughout the project.
+
+![Hyper-V Environment](screenshots/session-01/hyper-v-environment.png)
+
+---
+
+## Hyper-V Network Configuration
+
+Configuration of the Hybrid-Lab-Switch external virtual switch used for communication between all virtual machines.
+
+![Hyper-V Network Configuration](screenshots/session-01/hyper-v-network-adapter.png)
+
+---
+
+## Windows Server 2022
+
+Windows Server 2022 installation that serves as the foundation for the Active Directory Domain Controller deployed in later sessions.
+
+![Windows Server 2022](screenshots/session-01/windows-server-2022.png)
+
+---
+
+## Windows 11 Pro for Workstations
+
+Windows 11 Pro for Workstations installation used as the enterprise client system throughout the project.
+
+![Windows 11 Pro for Workstations](screenshots/session-01/windows11-pro.png)
+
+---
+
+## Ubuntu Server 26.04 LTS
+
+Validation of the Ubuntu Server installation, including operating system information, hostname, virtualization platform, and kernel details.
+
+![Ubuntu Server 26.04 LTS](screenshots/session-01/ubuntu-base-install.png)
+
+---
+
+## GitHub Repository
+
+Initial GitHub repository containing the project structure used throughout the lab.
+
+![GitHub Repository](screenshots/session-01/github-repository.png)

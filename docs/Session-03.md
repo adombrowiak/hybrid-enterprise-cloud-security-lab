@@ -259,3 +259,117 @@ Session 4 will focus on enterprise Linux administration and hardening by impleme
 - Authentication logging
 - Enterprise Linux hardening
 - Security auditing
+
+---
+
+# Screenshots
+
+## Organizational Unit Structure
+
+The enterprise Organizational Unit (OU) hierarchy used to logically separate administrative accounts, users, computers, groups, and service accounts within the Active Directory domain.
+
+![OU Structure](screenshots/session-03/ou-structure.png)
+
+---
+
+## Enterprise Security Groups
+
+Role-Based Access Control (RBAC) security groups created to delegate administrative responsibilities while following the principle of least privilege.
+
+![Enterprise Security Groups](screenshots/session-03/security-groups.png)
+
+---
+
+## Administrative User Account
+
+Validation of the delegated Active Directory administrative account used throughout the lab.
+
+![Administrative User Account](screenshots/session-03/admin-user.png)
+
+---
+
+## Standard User Account
+
+Validation of the standard Active Directory user account used for day-to-day authentication and testing.
+
+![Standard User Account](screenshots/session-03/standard-user.png)
+
+---
+
+## Administrative Group Membership
+
+Verification of the delegated administrative account's security group memberships.
+
+![Administrative Group Membership](screenshots/session-03/admin-group-membership.png)
+
+---
+
+## Domain Admins Group Membership
+
+Validation of the Domain Admins group membership demonstrating delegated administrative access.
+
+![Domain Admins Group Membership](screenshots/session-03/domain-admins-membership.png)
+
+---
+
+## Group Policy Link
+
+Verification that the workstation baseline Group Policy Object (GPO) is linked to the appropriate Organizational Unit.
+
+![Group Policy Link](screenshots/session-03/gpo-link.png)
+
+---
+
+## Group Policy Results
+
+Validation that the Windows 11 workstation successfully received and applied the assigned Group Policy Objects.
+
+![Group Policy Results](screenshots/session-03/gpresult-computer.png)
+
+---
+
+## Active Directory Realm Discovery
+
+Verification that Ubuntu Server successfully discovered the Active Directory realm and identified the required identity services.
+
+![Realm Discovery](screenshots/session-03/realm-discovery.png)
+
+---
+
+## Active Directory Realm Configuration
+
+Validation of the Active Directory realm configuration following the successful domain join.
+
+![Realm Configuration](screenshots/session-03/realm-list.png)
+
+---
+
+## Hybrid Identity Validation
+
+Verification that Ubuntu Server successfully resolves Active Directory users through SSSD and centralized identity services.
+
+![Hybrid Identity Validation](screenshots/session-03/hybrid-authentication.png)
+
+---
+
+## Active Directory Domain Login
+
+Successful authentication to Ubuntu Server using an Active Directory domain account with automatic home directory creation.
+
+![Active Directory Domain Login](screenshots/session-03/ubuntu-domain-login.png)
+
+---
+
+## SSSD Service Status
+
+Verification that the System Security Services Daemon (SSSD) is running and providing centralized authentication services.
+
+![SSSD Service Status](screenshots/session-03/sssd-status.png)
+
+---
+
+## Kerberos Authentication
+
+Validation of Kerberos authentication through the successful acquisition of a Ticket Granting Ticket (TGT) from the Active Directory domain.
+
+![Kerberos Authentication](screenshots/session-03/kerberos-ticket.png)

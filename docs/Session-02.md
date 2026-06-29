@@ -256,3 +256,85 @@ Session 3 will focus on implementing enterprise identity management by:
 - Deploying baseline Group Policy Objects (GPOs)
 - Joining Ubuntu Server to Active Directory
 - Validating hybrid Windows/Linux authentication
+
+---
+
+# Screenshots
+
+## Active Directory Domain
+
+Validation of the Active Directory domain following the promotion of DC01 to the first domain controller in the forest.
+
+![Active Directory Domain](screenshots/session-02/active-directory-domain.png)
+
+---
+
+## Active Directory Services
+
+Verification that the core Active Directory services are running correctly on the domain controller.
+
+![Active Directory Services](screenshots/session-02/active-directory-services.png)
+
+---
+
+## Domain Controller Information
+
+Validation of the Active Directory Domain Controller, including hostname, IP address, Global Catalog status, site assignment, and operating system.
+
+![Domain Controller Information](screenshots/session-02/domain-controller.png)
+
+---
+
+## DNS Forwarders
+
+Configuration of DNS forwarders to provide external name resolution while maintaining authoritative DNS services for the Active Directory domain.
+
+![DNS Forwarders](screenshots/session-02/dns-forwarders.png)
+
+---
+
+## Windows Domain Join
+
+Verification that the Windows 11 workstation successfully joined the Active Directory domain.
+
+![Windows Domain Join](screenshots/session-02/windows-domain-join.png)
+
+---
+
+## Domain Authentication
+
+Validation that the workstation is authenticated using a domain account and communicating with the domain controller.
+
+![Domain Authentication](screenshots/session-02/domain-authentication.png)
+
+---
+
+## Secure Channel Validation
+
+Verification of the secure trust relationship between the Windows 11 workstation and the Active Directory domain.
+
+![Secure Channel Validation](screenshots/session-02/secure-channel-validation.png)
+
+---
+
+## Windows Network Configuration
+
+Validation of the workstation's network configuration, including static IP addressing, DNS server assignment, and domain suffix.
+
+![Windows Network Configuration](screenshots/session-02/ipconfig-domain.png)
+
+---
+
+## Ubuntu Network Configuration
+
+Verification of Ubuntu Server network configuration, including hostname, IP address, DNS configuration, and default route.
+
+![Ubuntu Network Configuration](screenshots/session-02/ubuntu-network.png)
+
+---
+
+## Ubuntu DNS Validation
+
+Validation that Ubuntu Server successfully resolves Active Directory DNS records using the domain controller.
+
+![Ubuntu DNS Validation](screenshots/session-02/ubuntu-dns-validation.png)
