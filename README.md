@@ -180,8 +180,8 @@ Current architecture includes:
 | Session 1 | Initial Infrastructure Deployment | ✅ Complete | [Session-01](docs/Session-01.md) |
 | Session 2 | Active Directory & Domain Services | ✅ Complete | [Session-02](docs/Session-02.md) |
 | Session 3 | Enterprise Identity & Hybrid Linux Integration | ✅ Complete | [Session-03](docs/Session-03.md) |
-| Session 4 | Enterprise Linux Administration & Hardening | 🚧 Planned | [Session-04](docs/Session-04.md) |
-| Session 5 | Infrastructure Automation | 📋 Planned | [Session-05](docs/Session-05.md) |
+| Session 4 | Enterprise Linux Administration & Hardening | ✅ Complete | [Session-04](docs/Session-04.md) |
+| Session 5 | Infrastructure Automation | 🚧 Planned | [Session-05](docs/Session-05.md) |
 | Session 6 | Hybrid Cloud Integration | 📋 Planned | [Session-06](docs/Session-06.md) |
 | Session 7 | Enterprise Security Monitoring | 📋 Planned | [Session-07](docs/Session-07.md) |
 
@@ -194,7 +194,7 @@ Current architecture includes:
 | Enterprise Active Directory | ✅ |
 | Windows Domain Services | ✅ |
 | Hybrid Linux Integration | ✅ |
-| Enterprise Linux Administration | 🚧 |
+| Enterprise Linux Administration | ✅ |
 | Infrastructure as Code | 📋 |
 | Container Platform | 📋 |
 | Azure Integration | 📋 |

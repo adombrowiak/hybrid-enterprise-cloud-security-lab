@@ -11,7 +11,7 @@ This document provides a high-level timeline of the Hybrid Enterprise & Cloud Se
 | Session 1 | June 24, 2026 | Environment Foundation | ✅ Complete |
 | Session 2 | June 25, 2026 | Active Directory Foundation | ✅ Complete |
 | Session 3 | June 29, 2026 | Enterprise Identity & Hybrid Linux Integration | ✅ Complete |
-| Session 4 | Planned | Enterprise Linux Administration & Hardening | 🚧 Planned |
+| Session 4 | July 2, 2026 | Enterprise Linux Administration & Hardening | ✅ Complete |
 
 ---
 
@@ -20,7 +20,7 @@ This document provides a high-level timeline of the Hybrid Enterprise & Cloud Se
 - [Session 1](docs/Session-01.md)
 - [Session 2](docs/Session-02.md)
 - [Session 3](docs/Session-03.md)
-
+- [Session 4](docs/Session-04.md)
 ---
 
 ## Current Project Status

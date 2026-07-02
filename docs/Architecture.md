@@ -102,6 +102,8 @@ DNS Forwarders
  Kerberos                                  LDAP
  LDAP                                      SSSD
  Group Policy                              PAM
+                                           Enterprise DNS
+                                           Netplan
 ```
 
 ---
@@ -130,14 +132,15 @@ This structure separates administrative objects by function, simplifying adminis
 
 Enterprise identity is centrally managed through Active Directory.
 
-Current implementation includes:
+CCurrent implementation includes:
 
 - Active Directory Domain Services
-- DNS
+- Enterprise DNS
 - Kerberos
 - LDAP
 - SSSD
 - PAM
+- Netplan DNS Configuration
 
 Windows and Linux systems authenticate against the same centralized directory service.
 
@@ -188,6 +191,8 @@ Ubuntu Server has been integrated into Active Directory using:
 - SSSD
 - PAM
 - adcli
+- Netplan
+- systemd-resolved
 
 This allows Windows and Linux systems to share a common identity platform while maintaining native operating system administration.
 
@@ -211,6 +216,8 @@ This allows Windows and Linux systems to share a common identity platform while 
 
 - Ubuntu Server 26.04 LTS
 - OpenSSH
+- Netplan
+- systemd-resolved
 - SSSD
 - Kerberos
 - LDAP
@@ -282,6 +289,12 @@ Linux User
 Ubuntu Server
         │
         ▼
+Netplan
+        │
+        ▼
+Enterprise DNS
+        │
+        ▼
 SSSD
         │
         ▼
@@ -300,6 +313,7 @@ Active Directory
 | Hyper-V Infrastructure | ✅ Complete |
 | Active Directory | ✅ Operational |
 | Enterprise DNS | ✅ Operational |
+| Enterprise DNS Validation | ✅ Complete |
 | Windows Domain Integration | ✅ Complete |
 | Linux Domain Integration | ✅ Complete |
 | RBAC | ✅ Complete |

@@ -107,3 +107,38 @@ The command requires administrative privileges.
 ## Resolution
 
 Run the command using an administrative account or an elevated PowerShell session.
+
+## Ubuntu Unable to Resolve Active Directory Users
+
+### Symptoms
+
+- Ubuntu successfully joined the Active Directory domain.
+- Active Directory users could authenticate, but additional domain users could not be resolved.
+- SSSD reported the domain as **Offline**.
+- Domain Controller discovery failed despite the server being reachable.
+
+### Root Cause
+
+Two configuration issues were identified during troubleshooting:
+
+1. Active Directory DNS required validation after the Domain Controller was unable to properly advertise LDAP SRV records.
+2. Ubuntu's Netplan configuration specified the correct DNS server but did not include the required Active Directory DNS search domain (`corp.local`).
+
+Without the search domain, Ubuntu's system resolver could not properly locate Active Directory resources, preventing SSSD from discovering the Domain Controller.
+
+### Resolution
+
+- Validated Active Directory DNS health and confirmed LDAP SRV records were present.
+- Updated the Ubuntu Netplan configuration to include the `corp.local` DNS search domain.
+- Applied the updated network configuration using `netplan apply`.
+- Restarted SSSD.
+- Verified Domain Controller discovery and Active Directory user resolution.
+
+### Validation
+
+Following the configuration changes:
+
+- SSSD reported an **Online** status.
+- Active Directory Domain Controller discovery succeeded.
+- Standard and administrative Active Directory users resolved successfully.
+- Enterprise DNS and hybrid identity services were fully restored.
